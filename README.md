@@ -20,20 +20,6 @@
 
 </div>
 
-## 📸 Visual Showcase
-
-<div align="center">
-
-| 1. Aesthetic Anime Notion Button on YouTube | 2. 1-Click "Gemini Notes" Floating Exporter |
-|:---:|:---:|
-| <img src="assets/screenshots/youtube-extension-button.png" width="460" alt="Anime Notion Button on YouTube" /> | <img src="assets/screenshots/gemini-notes-copy.png" width="460" alt="Floating Gemini Copy Button" /> |
-
-| 3. Deep-Dive Curated Notion Notes Output | 4. Native Notion Mention Chips & Video Embeds |
-|:---:|:---:|
-| <img src="assets/screenshots/notion-notes-preview.png" width="460" alt="Notion Notes Preview" /> | <img src="assets/screenshots/notion-embed-and-mention.png" width="460" alt="Notion Embed and Mention" /> |
-
-</div>
-
 ---
 
 ## 💡 Why This Was Created
