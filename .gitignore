@@ -1,0 +1,17 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Scratch / Temporary Files
+node_modules/
+*.log
+*.tmp
+*.scratch.js
+generate-icons.html

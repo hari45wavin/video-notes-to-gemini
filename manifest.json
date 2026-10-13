@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Video Notes to Gemini",
+  "version": "1.2.0",
+  "description": "Send any video link to Gemini AI to generate curated Notion-style notes, summaries, resources, and embed codes.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://gemini.google.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.youtu.be/*",
+        "*://*.vimeo.com/*",
+        "*://*.dailymotion.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.netflix.com/*",
+        "*://*.hotstar.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.amazon.com/*",
+        "*://*.coursera.org/*",
+        "*://*.udemy.com/*",
+        "*://*.skillshare.com/*",
+        "*://*.ted.com/*",
+        "*://*.rumble.com/*",
+        "*://*.bilibili.com/*",
+        "*://*.facebook.com/watch*",
+        "*://*.instagram.com/reel*",
+        "*://*.instagram.com/tv*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "js": ["gemini-inject.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}
