@@ -1,0 +1,159 @@
+/* ============================================================
+   Video Notes to Gemini — Native YouTube Action Button Style
+   Matches YouTube's native action buttons (Download, Share, etc.)
+   Positioned in the top action row below the video player.
+   ============================================================ */
+
+/* ---------- Cute Anime Notion Button Styling (Translucent Notion Theme) ---------- */
+.vn2g-notion-btn {
+  pointer-events: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  padding: 0 7px !important;
+  border-radius: 16px !important;
+  background: rgba(25, 25, 25, 0.78) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  white-space: nowrap !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  line-height: normal !important;
+  vertical-align: middle !important;
+  margin: 0 4px !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  outline: none !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+
+/* Hover: Expands and glows with cute Notion aesthetic */
+.vn2g-notion-btn:hover {
+  background: rgba(35, 38, 40, 0.96) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 14px rgba(255, 255, 255, 0.15) !important;
+  padding: 0 13px 0 8px !important;
+  transform: translateY(-1px) scale(1.02) !important;
+}
+
+.vn2g-notion-btn:active {
+  transform: translateY(0) scale(0.96) !important;
+}
+
+/* Cute Anime Notion Logo SVG */
+.vn2g-notion-anime-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) !important;
+}
+
+.vn2g-notion-btn:hover .vn2g-notion-anime-icon {
+  transform: rotate(-6deg) scale(1.12) !important;
+}
+
+/* Expandable Text Label */
+.vn2g-notion-btn .vn2g-btn-text {
+  max-width: 0 !important;
+  opacity: 0 !important;
+  margin-left: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+  color: #ffffff !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px !important;
+  transition: max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, margin 0.2s ease !important;
+}
+
+.vn2g-notion-btn:hover .vn2g-btn-text {
+  max-width: 120px !important;
+  opacity: 1 !important;
+  margin-left: 6px !important;
+}
+
+/* Enhancer for YouTube Toolbar Injection */
+#enhancer-for-youtube-toolbar .vn2g-notion-btn {
+  height: 28px !important;
+  min-width: 28px !important;
+  border-radius: 14px !important;
+  padding: 0 5px !important;
+  margin-left: 5px !important;
+  margin-right: 2px !important;
+}
+
+#enhancer-for-youtube-toolbar .vn2g-notion-btn:hover {
+  padding: 0 10px 0 6px !important;
+}
+
+#enhancer-for-youtube-toolbar .vn2g-notion-btn .vn2g-notion-anime-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Sidebar Slot Above Playlist / Recommendations */
+#vn2g-sidebar-slot {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 10px !important;
+  margin-top: 4px !important;
+  box-sizing: border-box !important;
+}
+
+#vn2g-sidebar-slot .vn2g-notion-btn {
+  height: 34px !important;
+  min-width: 34px !important;
+  padding: 0 8px !important;
+  border-radius: 17px !important;
+}
+
+#vn2g-sidebar-slot .vn2g-notion-btn:hover {
+  padding: 0 14px 0 9px !important;
+}
+
+/* Toast Notification on Video Page */
+#vn2g-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.95);
+  color: #f8fafc;
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  z-index: 10000000;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#vn2g-toast.vn2g-show {
+  opacity: 1;
+  transform: translateY(0);
+}
