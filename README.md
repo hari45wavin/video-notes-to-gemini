@@ -9,12 +9,19 @@
 [![Notion Ready](https://img.shields.io/badge/Export_to-Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://notion.so)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/hari45wavin/video-notes-to-gemini/pulls)
+[![Good First Issues](https://img.shields.io/github/issues/hari45wavin/video-notes-to-gemini/good%20first%20issue?style=for-the-badge&color=7057ff&label=Good%20First%20Issues)](https://github.com/hari45wavin/video-notes-to-gemini/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+
+<br/>
+
+<img src="assets/social-preview.png" alt="Video Notes to Gemini Social Preview Banner" width="850" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+
+<br/><br/>
 
 <p align="center">
   <b>A lightweight, privacy-focused Chromium extension that automatically classifies video domains, synthesizes curated prompts, passes them to Google Gemini, and copies 100% complete Notion notes with native callouts, comparison tables, code blocks, and playable video embeds.</b>
 </p>
 
-[Key Features](#-key-features) • [Why This Exists](#-why-this-was-created) • [Visual Showcase](#-visual-showcase) • [Installation](#-installation-guide) • [How to Use](#-how-to-use) • [Architecture](#-architecture) • [Stats](#-performance--stats)
+[Key Features](#-key-features) • [Why This Exists](#-why-this-was-created) • [Visual Showcase](#-visual-showcase) • [Installation](#-installation-guide) • [How to Use](#-how-to-use) • [Architecture](#-architecture) • [Contributing](CONTRIBUTING.md) • [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ---
 
