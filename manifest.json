@@ -62,5 +62,14 @@
   ],
   "background": {
     "service_worker": "service-worker.js"
+  },
+  "commands": {
+    "trigger-gemini-notes": {
+      "suggested_key": {
+        "default": "Alt+Shift+N",
+        "mac": "Alt+Shift+N"
+      },
+      "description": "Trigger Video Notes to Gemini"
+    }
   }
 }

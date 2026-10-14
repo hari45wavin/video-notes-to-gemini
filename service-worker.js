@@ -22,3 +22,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true; // Keep message channel open for async response
   }
 });
+
+chrome.commands.onCommand.addListener(async (command) => {
+  if (command === "trigger-gemini-notes") {
+    try {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (tab && tab.id) {
+        chrome.tabs.sendMessage(tab.id, { action: "triggerNotes" });
+      }
+    } catch (err) {
+      console.error("VN2G command error:", err);
+    }
+  }
+});

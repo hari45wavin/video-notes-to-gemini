@@ -74,6 +74,9 @@ Cleans URL parameters (strips redundant `&list=`, `&index=`, and playlist noise)
 1. **YouTube Mention Chip:** Native badge with the YouTube logo.
 2. **Playable Video Player Embed:** Full interactive player embedded directly inside your Notion workspace.
 
+### ⌨️ 5. Keyboard Shortcut Trigger
+* Instantly generate notes using `Alt+Shift+N` (customizable in Chrome via `chrome://extensions/shortcuts`).
+
 ---
 
 ## 📊 Performance & Stats
