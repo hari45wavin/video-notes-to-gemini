@@ -1,0 +1,5 @@
+# GitHub Funding Configuration
+# Displays the 'Sponsor' button on the repository
+
+github: [hari45wavin]
+custom: ["https://github.com/sponsors/hari45wavin"]

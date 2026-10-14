@@ -10,6 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/hari45wavin/video-notes-to-gemini/pulls)
 [![Good First Issues](https://img.shields.io/github/issues/hari45wavin/video-notes-to-gemini/good%20first%20issue?style=for-the-badge&color=7057ff&label=Good%20First%20Issues)](https://github.com/hari45wavin/video-notes-to-gemini/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+[![Sponsor](https://img.shields.io/badge/Sponsor-💖-ff69b4?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/hari45wavin)
 
 <br/>
 
@@ -21,7 +22,7 @@
   <b>A lightweight, privacy-focused Chromium extension that automatically classifies video domains, synthesizes curated prompts, passes them to Google Gemini, and copies 100% complete Notion notes with native callouts, comparison tables, code blocks, and playable video embeds.</b>
 </p>
 
-[Key Features](#-key-features) • [Why This Exists](#-why-this-was-created) • [Visual Showcase](#-visual-showcase) • [Installation](#-installation-guide) • [How to Use](#-how-to-use) • [Architecture](#-architecture) • [Contributing](CONTRIBUTING.md) • [Code of Conduct](CODE_OF_CONDUCT.md)
+[Key Features](#-key-features) • [Why This Exists](#-why-this-was-created) • [Installation](#-installation-guide) • [How to Use](#-how-to-use) • [Architecture](#-architecture) • [Roadmap](ROADMAP.md) • [Support](#-support-the-project) • [Contributing](CONTRIBUTING.md)
 
 ---
 
@@ -201,6 +202,18 @@ Contributions, feedback, and feature suggestions are warmly welcomed!
 3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feat/AmazingFeature`)
 5. Open a Pull Request
+
+---
+
+## 💖 Support the Project
+
+Video Notes to Gemini is a 100% free, open-source passion project built to save students, developers, and lifelong learners hours of tedious manual transcription.
+
+If this extension saves you time, helps you ace your technical interviews, or keeps your Notion second brain organized, consider supporting its ongoing development:
+
+* ⭐ **Star the Repository:** Helps other developers discover the tool on GitHub.
+* 💖 **[Sponsor on GitHub](https://github.com/sponsors/hari45wavin):** Fuels maintenance, browser updates, and new features.
+* ☕ **[Buy Me a Coffee](https://github.com/sponsors/hari45wavin):** A small gesture that goes a huge way in keeping open-source sustainable!
 
 ---
 
