@@ -526,6 +526,12 @@ ${cleanVideoUrl}
   function init() {
     injectButton();
     watchNavigation();
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+      if (message && message.action === "triggerNotes") {
+        handleButtonClick();
+        sendResponse({ success: true });
+      }
+    });
   }
 
   if (document.readyState === "loading") {
