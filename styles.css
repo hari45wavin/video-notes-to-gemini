@@ -4,65 +4,73 @@
    Positioned in the top action row below the video player.
    ============================================================ */
 
-/* ---------- Cute Anime Notion Button Styling (Translucent Notion Theme) ---------- */
+/* ---------- Black & White Notion Style Button (High Contrast Monochrome) ---------- */
 .vn2g-notion-btn {
   pointer-events: auto !important;
+  position: relative !important;
+  z-index: 10 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  padding: 0 7px !important;
-  border-radius: 16px !important;
-  background: rgba(25, 25, 25, 0.78) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  padding: 0 6px !important;
+  border-radius: 6px !important;
+  background: #0f0f0f !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
   color: #ffffff !important;
   cursor: pointer !important;
   box-sizing: border-box !important;
   user-select: none !important;
   white-space: nowrap !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 12.5px !important;
+  font-size: 12px !important;
   font-weight: 600 !important;
   line-height: normal !important;
   vertical-align: middle !important;
   margin: 0 4px !important;
   flex-shrink: 0 !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   outline: none !important;
   text-decoration: none !important;
   overflow: hidden !important;
 }
 
-/* Hover: Expands and glows with cute Notion aesthetic */
+/* Hover: Crisp White Highlight */
 .vn2g-notion-btn:hover {
-  background: rgba(35, 38, 40, 0.96) !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 14px rgba(255, 255, 255, 0.15) !important;
-  padding: 0 13px 0 8px !important;
-  transform: translateY(-1px) scale(1.02) !important;
+  background: #1f1f1f !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45) !important;
+  transform: translateY(-1px) !important;
 }
 
 .vn2g-notion-btn:active {
-  transform: translateY(0) scale(0.96) !important;
+  transform: translateY(0) scale(0.97) !important;
 }
 
-/* Cute Anime Notion Logo SVG */
-.vn2g-notion-anime-icon {
-  width: 20px !important;
-  height: 20px !important;
+/* Crisp White Notion Tile with Black N */
+.vn2g-notion-tile {
+  width: 18px !important;
+  height: 18px !important;
   flex-shrink: 0 !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+  transition: transform 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
 }
 
-.vn2g-notion-btn:hover .vn2g-notion-anime-icon {
-  transform: rotate(-6deg) scale(1.12) !important;
+.vn2g-notion-btn:hover .vn2g-notion-tile {
+  transform: scale(1.08) !important;
+}
+
+.vn2g-notion-icon {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
 }
 
 /* Expandable Text Label */
@@ -74,57 +82,75 @@
   white-space: nowrap !important;
   display: inline-block !important;
   color: #ffffff !important;
-  font-size: 12.5px !important;
+  font-size: 12px !important;
   font-weight: 600 !important;
   letter-spacing: 0.2px !important;
-  transition: max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, margin 0.2s ease !important;
+  transition: max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, margin 0.2s ease !important;
 }
 
 .vn2g-notion-btn:hover .vn2g-btn-text {
-  max-width: 120px !important;
+  max-width: 110px !important;
   opacity: 1 !important;
   margin-left: 6px !important;
 }
 
-/* Enhancer for YouTube Toolbar Injection */
+/* Enhancer for YouTube Toolbar Injection (#efyt-control-bar) */
+#efyt-control-bar .vn2g-notion-btn,
+.efyt-control-bar .vn2g-notion-btn,
+[id*="efyt-control-bar"] .vn2g-notion-btn,
 #enhancer-for-youtube-toolbar .vn2g-notion-btn {
   height: 28px !important;
   min-width: 28px !important;
-  border-radius: 14px !important;
+  width: auto !important;
+  max-width: none !important;
   padding: 0 5px !important;
-  margin-left: 5px !important;
-  margin-right: 2px !important;
+  margin: 0 3px !important;
+  border-radius: 5px !important;
+  background: #141414 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
+#efyt-control-bar .vn2g-notion-btn:hover,
+.efyt-control-bar .vn2g-notion-btn:hover,
+[id*="efyt-control-bar"] .vn2g-notion-btn:hover,
 #enhancer-for-youtube-toolbar .vn2g-notion-btn:hover {
-  padding: 0 10px 0 6px !important;
+  background: #222222 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+  padding: 0 8px 0 5px !important;
 }
 
-#enhancer-for-youtube-toolbar .vn2g-notion-btn .vn2g-notion-anime-icon {
-  width: 18px !important;
-  height: 18px !important;
+#efyt-control-bar .vn2g-notion-btn .vn2g-notion-tile,
+.efyt-control-bar .vn2g-notion-btn .vn2g-notion-tile,
+[id*="efyt-control-bar"] .vn2g-notion-btn .vn2g-notion-tile {
+  width: 17px !important;
+  height: 17px !important;
 }
 
-/* Sidebar Slot Above Playlist / Recommendations */
-#vn2g-sidebar-slot {
+/* Top Slot directly above title (when Enhancer is not active or before it loads) */
+#vn2g-top-slot {
   display: flex !important;
-  justify-content: flex-start !important;
   align-items: center !important;
+  justify-content: flex-start !important;
   width: 100% !important;
-  margin-bottom: 10px !important;
-  margin-top: 4px !important;
+  padding: 6px 0 6px 0 !important;
+  margin: 2px 0 4px 0 !important;
   box-sizing: border-box !important;
 }
 
-#vn2g-sidebar-slot .vn2g-notion-btn {
-  height: 34px !important;
-  min-width: 34px !important;
-  padding: 0 8px !important;
-  border-radius: 17px !important;
+#vn2g-top-slot .vn2g-notion-btn {
+  height: 30px !important;
+  padding: 0 10px 0 6px !important;
+  border-radius: 6px !important;
+  background: #111111 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
 }
 
-#vn2g-sidebar-slot .vn2g-notion-btn:hover {
-  padding: 0 14px 0 9px !important;
+#vn2g-top-slot .vn2g-notion-btn .vn2g-btn-text {
+  max-width: 110px !important;
+  opacity: 1 !important;
+  margin-left: 6px !important;
 }
 
 /* Toast Notification on Video Page */

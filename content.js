@@ -354,31 +354,25 @@ ${cleanVideoUrl}
   }
 
   /* --------------------------------------------------------
-     Cute Anime Notion Button Element Generator
-     - Notion logo cube with kawaii golden anime sparkle.
-     - Translucent Notion dark-glass aesthetic.
+     Black & White Notion Style Button Element Generator
+     - Authentic monochrome Notion brand icon on crisp white tile.
+     - Pure black & white high-contrast Notion styling (NO AI / colorful logos).
      - Expands smoothly on hover to reveal "Gemini Notes".
      -------------------------------------------------------- */
   function createNotionButton(btnId) {
     const btn = document.createElement("button");
     btn.id = btnId;
     btn.className = "vn2g-notion-btn";
-    btn.title = "Gemini Notes";
+    btn.title = "Gemini Notes (Create Notion Notes)";
     btn.setAttribute("aria-label", "Gemini Notes (Create Notion Notes)");
 
     btn.innerHTML = `
-      <svg class="vn2g-notion-anime-icon" viewBox="0 0 32 32" fill="none">
-        <!-- Cute Notion 3D Block / Tile with soft rounded corners -->
-        <rect x="3.5" y="3.5" width="25" height="25" rx="6" fill="#FFFFFF" stroke="#191919" stroke-width="2.2"/>
-        <!-- Notion Block 3D Shadow Line -->
-        <path d="M5.5 28.5h21a2 2 0 0 0 2-2v-21" stroke="#2F3437" stroke-width="2.2" stroke-linecap="round"/>
-        <!-- Iconic Notion "N" with stylized serif -->
-        <path d="M9.5 9h3.2v8.6l6-8.6h3.6v14h-3.2v-8.6l-6 8.6H9.5V9z" fill="#191919"/>
-        <!-- Cute Golden Anime Sparkle at top right -->
-        <path d="M26.5 2.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" fill="#F6C443"/>
-        <!-- Tiny Kawaii Pink Sparkle Dot -->
-        <circle cx="29.2" cy="9.2" r="1.1" fill="#FF8FA3"/>
-      </svg>
+      <span class="vn2g-notion-tile">
+        <svg class="vn2g-notion-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4.5" fill="#FFFFFF"/>
+          <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z" fill="#000000"/>
+        </svg>
+      </span>
       <span class="vn2g-btn-text">Gemini Notes</span>
     `;
 
@@ -387,18 +381,34 @@ ${cleanVideoUrl}
   }
 
   /* --------------------------------------------------------
-     Inject Cute Anime Notion Button
-     - Priority A: Right side of settings button in Enhancer toolbar (#enhancer-for-youtube-toolbar).
-     - Priority B: Right above video playlist / recommendations (#secondary).
+     Helper: Find Enhancer for YouTube Toolbar
+     -------------------------------------------------------- */
+  function findEnhancerToolbar() {
+    return (
+      document.querySelector("#efyt-control-bar") ||
+      document.querySelector(".efyt-control-bar") ||
+      document.querySelector("[id*='efyt-control-bar']") ||
+      document.querySelector("#ytp-efyt-controls") ||
+      document.querySelector("#enhancer-for-youtube-toolbar") ||
+      document.querySelector(".enhancer-for-youtube-toolbar")
+    );
+  }
+
+  /* --------------------------------------------------------
+     Inject Black & White Notion Button
+     - Priority A: Inside Enhancer for YouTube control bar (#efyt-control-bar) on that exact line.
+     - Priority B: Top row directly below video player and above video title (#vn2g-top-slot).
      -------------------------------------------------------- */
   function injectButton() {
     const host = window.location.hostname;
 
     if (host.includes("youtube.com") || host.includes("youtu.be")) {
-      // 1. Target A: Enhancer for YouTube Toolbar (right side of settings button)
-      const enhancerToolbar =
-        document.querySelector("#enhancer-for-youtube-toolbar") ||
-        document.querySelector("#enhancer-for-youtube-toolbar-wrapper");
+      // Clean up legacy sidebar button from bottom right if still present
+      const oldSidebar = document.getElementById("vn2g-sidebar-slot");
+      if (oldSidebar) oldSidebar.remove();
+
+      // 1. Target A: Enhancer for YouTube Toolbar (#efyt-control-bar)
+      const enhancerToolbar = findEnhancerToolbar();
 
       if (enhancerToolbar) {
         let enhBtn = document.getElementById("vn2g-enhancer-btn");
@@ -406,49 +416,36 @@ ${cleanVideoUrl}
           if (enhBtn) enhBtn.remove();
           enhBtn = createNotionButton("vn2g-enhancer-btn");
           enhancerToolbar.appendChild(enhBtn);
-          console.log("VN2G: Inserted cute anime Notion button inside Enhancer toolbar beside settings.");
+          console.log("VN2G: Inserted black & white Notion button inside Enhancer toolbar on the line.");
         }
+        // Remove standalone top slot if enhancer bar is present
+        const topSlot = document.getElementById("vn2g-top-slot");
+        if (topSlot) topSlot.remove();
+        return;
       }
 
-      // 2. Target B: Above Video Playlist or Recommendations (Right column)
-      const playlistPanel =
-        document.querySelector("ytd-playlist-panel-renderer#playlist") ||
-        document.querySelector("#secondary #playlist") ||
-        document.querySelector("ytd-watch-flexy #playlist");
+      // 2. Target B: Line just below video player and directly above video title
+      const below = document.querySelector("#below");
+      const watchMetadata = document.querySelector("ytd-watch-metadata");
+      const titleEl = document.querySelector("#title.ytd-watch-metadata, #above-the-fold #title, h1.ytd-watch-metadata");
 
-      const relatedPanel =
-        document.querySelector("#secondary #related") ||
-        document.querySelector("#secondary-inner") ||
-        document.querySelector("#secondary");
+      const topAnchor = watchMetadata || titleEl || below;
 
-      const sidebarTarget = playlistPanel || relatedPanel;
-
-      if (sidebarTarget && sidebarTarget.parentNode) {
-        let slot = document.getElementById("vn2g-sidebar-slot");
-        if (!slot || slot.nextSibling !== sidebarTarget) {
-          if (slot) slot.remove();
-          slot = document.createElement("div");
-          slot.id = "vn2g-sidebar-slot";
-          sidebarTarget.parentNode.insertBefore(slot, sidebarTarget);
+      if (topAnchor && topAnchor.parentNode) {
+        let topSlot = document.getElementById("vn2g-top-slot");
+        if (!topSlot || topSlot.nextSibling !== topAnchor) {
+          if (topSlot) topSlot.remove();
+          topSlot = document.createElement("div");
+          topSlot.id = "vn2g-top-slot";
+          topAnchor.parentNode.insertBefore(topSlot, topAnchor);
         }
-        let sidebarBtn = document.getElementById("vn2g-sidebar-btn");
-        if (!sidebarBtn || sidebarBtn.parentNode !== slot) {
-          if (sidebarBtn) sidebarBtn.remove();
-          sidebarBtn = createNotionButton("vn2g-sidebar-btn");
-          slot.appendChild(sidebarBtn);
-          console.log("VN2G: Inserted cute anime Notion button above playlist/recommendations.");
-        }
-      }
 
-      // 3. Fallback Target C: Top action row if neither is ready
-      if (!enhancerToolbar && !sidebarTarget) {
-        const topLevelButtons =
-          document.querySelector("#top-level-buttons-computed") ||
-          document.querySelector("ytd-menu-renderer.ytd-watch-metadata #top-level-buttons-computed");
-
-        if (topLevelButtons && !document.getElementById("vn2g-action-btn")) {
-          const fallbackBtn = createNotionButton("vn2g-action-btn");
-          topLevelButtons.appendChild(fallbackBtn);
+        let topBtn = document.getElementById("vn2g-top-btn");
+        if (!topBtn || topBtn.parentNode !== topSlot) {
+          if (topBtn) topBtn.remove();
+          topBtn = createNotionButton("vn2g-top-btn");
+          topSlot.appendChild(topBtn);
+          console.log("VN2G: Inserted black & white Notion button directly above title below video.");
         }
       }
     } else {
@@ -475,16 +472,22 @@ ${cleanVideoUrl}
   setInterval(() => {
     const host = window.location.hostname;
     if (host.includes("youtube.com") || host.includes("youtu.be")) {
-      const enhancerToolbar = document.querySelector("#enhancer-for-youtube-toolbar");
+      const enhancerToolbar = findEnhancerToolbar();
       const enhBtn = document.getElementById("vn2g-enhancer-btn");
-      const sidebarBtn = document.getElementById("vn2g-sidebar-btn");
+      const topBtn = document.getElementById("vn2g-top-btn");
 
-      // If enhancer toolbar is on page and button is missing, or sidebar button is missing, re-inject
-      if ((enhancerToolbar && !enhBtn) || !sidebarBtn) {
-        injectButton();
+      // Ensure button is present on the Enhancer toolbar line or top slot
+      if (enhancerToolbar) {
+        if (!enhBtn || enhBtn.parentNode !== enhancerToolbar) {
+          injectButton();
+        }
+      } else {
+        if (!topBtn) {
+          injectButton();
+        }
       }
     }
-  }, 1000);
+  }, 800);
 
   /* --------------------------------------------------------
      Watch for SPA Navigation (YouTube video switches)
@@ -504,6 +507,10 @@ ${cleanVideoUrl}
         if (existing) existing.remove();
         const enh = document.getElementById("vn2g-enhancer-btn");
         if (enh) enh.remove();
+        const topBtn = document.getElementById("vn2g-top-btn");
+        if (topBtn) topBtn.remove();
+        const topSlot = document.getElementById("vn2g-top-slot");
+        if (topSlot) topSlot.remove();
         const side = document.getElementById("vn2g-sidebar-btn");
         if (side) side.remove();
         setTimeout(injectButton, 800);
